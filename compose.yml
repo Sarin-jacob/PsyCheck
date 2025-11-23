@@ -1,0 +1,25 @@
+services:
+  psycheck:
+    build: .
+    image: psycheck:latest
+    container_name: psycheck
+    restart: unless-stopped
+    # Enforce the nonroot user ID used in distroless
+    user: "65532:65532"
+    ports:
+      - "8080:8080"
+    environment:
+      # Matches process.env.BASE_URL in server.js
+      - BASE_URL=/psycheck
+      # # Matches process.env.DB_PATH in server.js
+      # - DB_PATH=/data/storage.db
+    volumes:
+      # We map to /data because that is where we set permissions in the Dockerfile
+      - psycheck_data:/data
+      # Use `docker compose cp psycheck:/data/storage.db ./storage.db` to download the database
+      
+      # OPTIONAL: If you want to live-edit HTML files without rebuilding, uncomment the line below:
+      # - ./public:/app/public
+
+volumes:
+  psycheck_data:
