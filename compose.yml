@@ -9,9 +9,9 @@ services:
     networks: [tsnet]
 #    ports:
 #      - "8080:8080"
-    environment:
+    # environment:
       # Matches process.env.BASE_URL in server.js
-      - BASE_URL=/psycheck
+      # - BASE_URL=/psycheck
       # # Matches process.env.DB_PATH in server.js
       # - DB_PATH=/data/storage.db
     volumes:
