@@ -57,6 +57,7 @@ app.use(helmet({
                 "'self'", 
                 "'unsafe-inline'", 
                 "https://unpkg.com", 
+                "'unsafe-eval'",
                 "https://cdn.jsdelivr.net",
                 "https://cdn.tailwindcss.com" 
             ],
