@@ -83,7 +83,7 @@ router.post('/upload', (req, res) => {
         const content = body[uniqueID]; // The actual data inside
 
         // Identify the Project Name from the content
-        const projectName = content.project;
+        const projectName = content.project || (content.quiz && content.quiz.project);
 
         if (!projectName) {
             return res.status(400).send("Invalid JSON: 'project' field missing.");
