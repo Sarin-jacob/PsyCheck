@@ -59,7 +59,8 @@ app.use(helmet({
                 "https://unpkg.com", 
                 "'unsafe-eval'",
                 "https://cdn.jsdelivr.net",
-                "https://cdn.tailwindcss.com" 
+                "https://cdn.tailwindcss.com",
+                "https://cdnjs.cloudflare.com" 
             ],
             "script-src-attr": ["'unsafe-inline'"],
             // Allow images/icons (Lucide creates SVGs, sometimes treated as images)
